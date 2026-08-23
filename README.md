@@ -1,6 +1,6 @@
 # Autonomous Object Sorting Robot
 
-An autonomous **VEX IQ robot programmed in C++** that identifies, collects, and sorts objects into designated locations. The system combines multiple sensors with closed-loop motor control for autonomous navigation and object handling.
+An autonomous **VEX IQ robot programmed in C++** that collects and sorts objects into designated locations. The system combines multiple sensors with closed-loop motor control for autonomous navigation and object handling.
 
 ## Overview
 
@@ -12,20 +12,17 @@ The robot completes an autonomous sorting cycle:
 4. A **distance sensor** detects the sorting box and controls the final approach.
 5. A motorized claw and lift release the object.
 6. **Motor encoders** measure travelled distance so the robot can return to its starting position.
+## Control & Navigation
 
-## Technical Implementation
+#### Closed-Loop Control
 
-### Closed-Loop Control
+Implemented a **PID controller** for accurate 90° turns using inertial sensor feedback. A separate proportional correction continuously adjusts motor speeds during straight-line motion to compensate for heading deviations.
 
-Implemented a **PID controller** for accurate 90° turns using inertial sensor feedback.
-
-A separate proportional correction continuously adjusts motor speeds during straight-line motion to compensate for heading deviations.
-
-### Encoder-Based Navigation
+#### Encoder-Based Navigation
 
 Motor encoders track the robot's displacement during each navigation segment. The recorded distance is then used to retrace the path and return to the starting position without requiring a predefined map.
 
-### Multi-Sensor Integration
+#### Multi-Sensor Integration
 
 | Sensor | Purpose |
 |---|---|
@@ -49,20 +46,12 @@ Key functions include:
 - `move_lift()` / `claw()` — object handling
 - `getCategoryInput()` — user input and inactivity handling
 
-## Control & Navigation
 
-The robot relies on **real-time sensor feedback rather than fixed motor timings**. Heading, distance, colour, and encoder measurements continuously influence the robot's behaviour.
-
-Timeouts are also used during colour detection to prevent the robot from driving indefinitely if the target stripe is not found.
-
-## Demo & Report
-
-**[Watch the robot in operation](https://youtu.be/CaOrTIv2SYU)**
-
-**[Full Project Report](https://drive.google.com/file/d/1MJbCLCNo2NveWUUdiiL4WoyymR6oygXf/view?usp=sharing)**
-
+<br></br>
 ## Project
 
-Developed as a team project for **MTE 100 & MTE 121 — University of Waterloo, Fall 2025**
-
+**MTE 100 & MTE 121 — University of Waterloo, Fall 2025**  
 Team project by **Anshia Yaqoob, Jaime McGale, Martin Montgomery, and Ahmad Ashmawi**.
+
+**[Watch the demo](https://youtu.be/CaOrTIv2SYU)**.
+**[View the project report](https://drive.google.com/file/d/1MJbCLCNo2NveWUUdiiL4WoyymR6oygXf/view?usp=sharing)**.
