@@ -4,25 +4,22 @@ An autonomous **VEX IQ robot programmed in C++** that collects and sorts objects
 
 ## Overview
 
-The robot completes an autonomous sorting cycle:
+## How It Works
 
-1. User selects an object category using a **touch sensor**.
-2. The robot drives forward and detects the corresponding coloured stripe using an **optical sensor**.
-3. An **inertial sensor** provides heading feedback for a controlled 90° turn.
-4. A **distance sensor** detects the sorting box and controls the final approach.
-5. A motorized claw and lift release the object.
-6. **Motor encoders** measure travelled distance so the robot can return to its starting position.
+1. The user selects an object category using the touch sensor.
+2. The robot drives forward and uses an optical sensor to find the corresponding coloured stripe.
+3. It performs a PID-controlled 90° turn using inertial sensor feedback.
+4. A distance sensor guides the robot toward the sorting box.
+5. The claw and lift release the object.
+6. Motor encoders track the travelled distance so the robot can return to its starting position.
+
 ## Control & Navigation
 
-#### Closed-Loop Control
-
-Implemented a **PID controller** for accurate 90° turns using inertial sensor feedback. A separate proportional correction continuously adjusts motor speeds during straight-line motion to compensate for heading deviations.
-
-#### Encoder-Based Navigation
+Implemented a **PID controller** for accurate 90° turns using inertial sensor feedback. A separate proportional correction continuously adjusts motor speeds during straight-line motion to compensate for heading deviations. 
 
 Motor encoders track the robot's displacement during each navigation segment. The recorded distance is then used to retrace the path and return to the starting position without requiring a predefined map.
 
-#### Multi-Sensor Integration
+#### Sensors Used:
 
 | Sensor | Purpose |
 |---|---|
