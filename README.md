@@ -32,20 +32,6 @@ Motor encoders track the robot's displacement during each navigation segment. Th
 | Touch LED | Category selection |
 | Motor Encoders | Position and distance tracking |
 
-## Software Architecture
-
-The program uses a modular, function-based structure separating navigation, sensing, and actuator control.
-
-Key functions include:
-
-- `rotate()` — PID-controlled turning
-- `driveStraight()` — heading correction
-- `driveToBox()` — distance-based approach
-- `moveBackwards()` — encoder-based return navigation
-- `findStripe()` — colour detection
-- `move_lift()` / `claw()` — object handling
-- `getCategoryInput()` — user input and inactivity handling
-
 
 <br></br>
 ## Project
