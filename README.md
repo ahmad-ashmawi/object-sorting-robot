@@ -1,6 +1,6 @@
 # Autonomous Object Sorting Robot
 
-An autonomous **VEX IQ robot programmed in C++** that collects and sorts objects into designated locations. The system combines multiple sensors with closed-loop motor control for autonomous navigation and object handling.
+An autonomous **robot programmed in C++** that collects and sorts objects into designated locations. The system combines multiple sensors with closed-loop motor control for autonomous navigation and object handling.
 <br></br>
 ## Overview
 
